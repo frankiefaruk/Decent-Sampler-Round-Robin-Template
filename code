@@ -1,4 +1,6 @@
-```xml
+,,,xml
+
+<?xml version="1.0" encoding="UTF-8"?>
 
 <DecentSampler>
   <groups seqMode="round_robin" attack="0.06206250563263893" decay="0.1175000071525574" release="0.1175000071525574">
@@ -16,7 +18,22 @@
       <labeled-knob x="355" y="15" width="120" textSize="16" textColor="FFFFF7C3" trackForegroundColor="FFFFF7C3" trackBackgroundColor="FF3E3A2E" label="LFO DEPTH" type="float" minValue="0.0" maxValue="0.32" value="0.0006099999882280827">
         <binding level="instrument" type="modulator" position="0" parameter="MOD_AMOUNT"/>
       </labeled-knob>
-      <!-- ... other UI elements ... -->
+      <labeled-knob x="215" y="115" width="80" textSize="16" textColor="FFFFF7C3" trackForegroundColor="FFFFF7C3" trackBackgroundColor="FF3E3A2E" label="ATTACK" type="float" minValue="0.0" maxValue="4.0" value="0.0755624994635582">
+        <binding type="amp" level="instrument" position="0" parameter="ENV_ATTACK"/>
+      </labeled-knob>
+      <labeled-knob x="285" y="125" width="80" textSize="16" textColor="FFFFF7C3" trackForegroundColor="FFFFF7C3" trackBackgroundColor="FF3E3A2E" label="RELEASE" type="float" minValue="0.0" maxValue="20.0" value="0.1175000071525574">
+        <binding type="amp" level="instrument" position="0" parameter="ENV_DECAY"/>
+        <binding type="amp" level="instrument" position="1" parameter="ENV_RELEASE"/>
+      </labeled-knob>
+      <labeled-knob x="535" y="115" width="80" textSize="16" textColor="FFFFF7C3" trackForegroundColor="FFFFF7C3" trackBackgroundColor="FF3E3A2E" label="CHORUS" type="float" minValue="0.0" maxValue="1" value="0.000343749998137354">
+        <binding type="effect" level="instrument" position="1" parameter="FX_MIX"/>
+      </labeled-knob>
+      <labeled-knob x="375" y="135" width="80" textSize="16" textColor="FFFFF7C3" trackForegroundColor="FFFFF7C3" trackBackgroundColor="FF3E3A2E" label="TONE" type="float" minValue="0" maxValue="1" value="1.0">
+        <binding type="effect" level="instrument" position="0" parameter="FX_FILTER_FREQUENCY" translation="table" translationTable="0,33;0.3,150;0.4,450;0.5,1100;0.7,4100;0.9,11000;1.0001,22000"/>
+      </labeled-knob>
+      <labeled-knob x="455" y="125" width="80" textSize="16" textColor="FFFFF7C3" trackForegroundColor="FFFFF7C3" trackBackgroundColor="FF3E3A2E" label="REVERB" type="percent" minValue="0" maxValue="100" value="8.333586692810059">
+        <binding type="effect" level="instrument" position="2" parameter="FX_REVERB_WET_LEVEL" translation="linear" translationOutputMin="0" translationOutputMax="1"/>
+      </labeled-knob>
     </tab>
     <keyboard/>
   </ui>
@@ -38,4 +55,4 @@
   <tags/>
   <modulators/>
 </DecentSampler>
-```
+            
