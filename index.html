@@ -58,7 +58,7 @@
         .theme-toggle {
             position: absolute;
             top: 20px;
-            right: 20px;
+            right: 50px;
             cursor: pointer;
             background: none;
             border: none;
@@ -66,8 +66,9 @@
             color: var(--text-color-light);
         }
         .divider {
+            width: 90%;
+            margin: 0 auto;
             border-top: 1px solid #777;
-            margin: 20px 0;
         }
         h1, h2 {
             text-align: center;
@@ -116,8 +117,25 @@
             color: #777;
         }
         .blog-content {
-            margin: 20px;
+        margin: 20px;
+    }
+
+    /* Add this media query below */
+    @media (max-width: 600px) {
+        .theme-toggle {
+            top: 10px;
+            right: 10px;
+            font-size: 14px;
         }
+
+        header {
+            padding: 10px;
+        }
+
+        .header-button {
+            padding: 8px 16px;
+        }
+    }
     </style>
 </head>
 <body>
@@ -163,15 +181,15 @@
             <p>The template defines multiple groups using the <code>&lt;groups&gt;</code> tag. These groups alternate based on the <code>seqMode</code> set to <code>round_robin</code>. This helps in creating a more realistic and dynamic playback.</p>
             <section class="code-section collapsible" id="code-section">
                 <pre><code class="language-xml">&lt;groups seqMode=&quot;round_robin&quot; attack=&quot;0.062&quot; decay=&quot;0.117&quot; release=&quot;0.117&quot;&gt;
-    &lt;group name=&quot;Group 1&quot; seqPosition=&quot;1&quot;&gt;
-        &lt;!-- YOUR SAMPLE GOES HERE --&gt;
-        &lt;effects/&gt;
-    &lt;/group&gt;
-    &lt;group name=&quot;Group 2&quot; seqPosition=&quot;2&quot;&gt;
-        &lt;!-- YOUR SAMPLE GOES HERE --&gt;
-        &lt;effects/&gt;
-    &lt;/group&gt;
-&lt;/groups&gt;
+        &lt;group name=&quot;Group 1&quot; seqPosition=&quot;1&quot;&gt;
+            &lt;!-- YOUR SAMPLE GOES HERE --&gt;
+            &lt;effects/&gt;
+        &lt;/group&gt;
+        &lt;group name=&quot;Group 2&quot; seqPosition=&quot;2&quot;&gt;
+            &lt;!-- YOUR SAMPLE GOES HERE --&gt;
+            &lt;effects/&gt;
+        &lt;/group&gt;
+        &lt;/groups&gt;
                 </code></pre>
             </section>
             <p><strong><code>seqMode="round_robin"</code></strong>: Ensures the groups are played in sequence, one after another.</p>
@@ -183,14 +201,14 @@
             <p>The user interface elements are defined within the <code>&lt;ui&gt;</code> tag. It includes labeled knobs for adjusting parameters like LFO depth, attack, release, chorus, and tone.</p>
             <section class="code-section collapsible" id="ui-code-section">
                 <pre><code class="language-xml">&lt;ui bgImage=&quot;Resources/background.png&quot; width=&quot;812&quot; height=&quot;375&quot; layoutMode=&quot;relative&quot; bgMode=&quot;top_left&quot;&gt;
-    &lt;tab name=&quot;main&quot;&gt;
+        &lt;tab name=&quot;main&quot;&gt;
         &lt;labeled-knob x=&quot;355&quot; y=&quot;15&quot; width=&quot;120&quot; label=&quot;LFO DEPTH&quot; type=&quot;float&quot; minValue=&quot;0.0&quot; maxValue=&quot;0.32&quot; value=&quot;0.0006&quot;&gt;
             &lt;binding level=&quot;instrument&quot; type=&quot;modulator&quot; position=&quot;0&quot; parameter=&quot;MOD_AMOUNT&quot;/&gt;
         &lt;/labeled-knob&gt;
         &lt;!-- Additional knobs for ATTACK, RELEASE, etc. --&gt;
-    &lt;/tab&gt;
-    &lt;keyboard/&gt;
-&lt;/ui&gt;
+        &lt;/tab&gt;
+        &lt;keyboard/&gt;
+        &lt;/ui&gt;
                 </code></pre>
             </section>
             <p><strong>&lt;labeled-knob&gt;</strong>: Defines a knob that users can interact with to adjust parameters.</p>
